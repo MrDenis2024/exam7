@@ -9,6 +9,8 @@ import coffeeImage from '../../assets/coffee.jpg';
 import teaImage from '../../assets/tea.jpg';
 import colaImage from '../../assets/cola.jpg';
 import ItemMenu from '../../components/ItemMenu/ItemMenu';
+import Order from '../../components/Order/Order';
+
 
 const App = () => {
   const [menu, setMenu] = useState<itemMenu[]>([
@@ -20,13 +22,34 @@ const App = () => {
     {name: 'Cola', img: colaImage, price: 40, count: 0, id: '6'},
   ]);
 
+  const addItem = (id: string) => {
+    setMenu((prevState) => {
+      return prevState.map((item) => {
+        if(item.id === id) {
+          return {...item, count: item.count + 1};
+        }
+
+        return item;
+      });
+    });
+  };
+
+  const removeItem = (id: string) => {
+    setMenu((prevState) => {
+      return prevState.map((item) => {
+        if(item.id === id) {
+          return {...item, count: item.count - 1};
+        }
+
+        return item;
+      });
+    });
+  };
 
   return (
     <div className='app'>
-      <div>
-
-      </div>
-      <ItemMenu menu={menu} />
+      <Order menu={menu} removeItem={removeItem} />
+      <ItemMenu menu={menu} addItem={addItem} />
     </div>
   );
 };

@@ -1,0 +1,17 @@
+.order {
+  flex-basis: 35%;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.order-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-quantity {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: space-between;
+}
