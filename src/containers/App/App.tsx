@@ -8,25 +8,26 @@ import friesImage from '../../assets/fries.jpg';
 import coffeeImage from '../../assets/coffee.jpg';
 import teaImage from '../../assets/tea.jpg';
 import colaImage from '../../assets/cola.jpg';
-import Item from '../../components/Item/Item';
+import ItemMenu from '../../components/ItemMenu/ItemMenu';
 
 const App = () => {
   const [menu, setMenu] = useState<itemMenu[]>([
-    {name: 'Hamburger', img: hamburgerImage, price: 80, count: 0},
-    {name: 'Cheeseburger', img: cheeseburgerImage, price: 90, count: 0},
-    {name: 'Fries', img: friesImage, price: 45, count: 0},
-    {name: 'Coffee', img: coffeeImage, price: 70, count: 0},
-    {name: 'Tea', img: teaImage, price: 50, count: 0},
-    {name: 'Cola', img: colaImage, price: 40, count: 0},
+    {name: 'Hamburger', img: hamburgerImage, price: 80, count: 0, id: '1'},
+    {name: 'Cheeseburger', img: cheeseburgerImage, price: 90, count: 0, id: '2'},
+    {name: 'Fries', img: friesImage, price: 45, count: 0, id: '3'},
+    {name: 'Coffee', img: coffeeImage, price: 70, count: 0, id: '4'},
+    {name: 'Tea', img: teaImage, price: 50, count: 0, id: '5'},
+    {name: 'Cola', img: colaImage, price: 40, count: 0, id: '6'},
   ]);
 
 
   return (
-    <>
-      {menu.map((item) => (
-        <Item item={item} />
-      ))}
-    </>
+    <div className='app'>
+      <div>
+
+      </div>
+      <ItemMenu menu={menu} />
+    </div>
   );
 };
 
