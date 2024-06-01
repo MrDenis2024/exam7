@@ -1,6 +1,8 @@
 import './App.css';
 import {useState} from 'react';
 import {itemMenu} from '../../type';
+import ItemMenu from '../../components/ItemMenu/ItemMenu';
+import Order from '../../components/Order/Order';
 
 import hamburgerImage from '../../assets/hamburger.jpg';
 import cheeseburgerImage from '../../assets/cheeseburger.jpg';
@@ -8,8 +10,7 @@ import friesImage from '../../assets/fries.jpg';
 import coffeeImage from '../../assets/coffee.jpg';
 import teaImage from '../../assets/tea.jpg';
 import colaImage from '../../assets/cola.jpg';
-import ItemMenu from '../../components/ItemMenu/ItemMenu';
-import Order from '../../components/Order/Order';
+
 
 
 const App = () => {

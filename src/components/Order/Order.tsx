@@ -1,6 +1,7 @@
 import React from 'react';
 import {itemMenu} from '../../type';
 import './Order.css';
+import OrderPrice from '../OrderPrice/OrderPrice';
 
 
 interface Props {
@@ -15,7 +16,7 @@ const Order: React.FC<Props> = ({menu, removeItem}) => {
         <div className='item-quantity'>
           <span>x{item.count}</span>
           <span>{item.count * item.price} сом</span>
-          <button onClick={() => removeItem(item.id)}>Убрать позицию</button>
+          <button onClick={() => removeItem(item.id)} className='order-btn'>Убрать позицию</button>
         </div>
       </div>);
     }
@@ -26,7 +27,7 @@ const Order: React.FC<Props> = ({menu, removeItem}) => {
     <div className="order">
       <h2>Заказ</h2>
       <div className='oredr-items'>
-        {orderItem.length > 0 ? <div>{orderItem}</div> : <div>Заказов нет <p>Сделайте заказ пожалуйста!</p></div>}
+        {orderItem.length > 0 ? <div>{orderItem} <OrderPrice menu={menu}/></div> : <div>Заказов нет <p>Сделайте заказ пожалуйста!</p></div>}
       </div>
     </div>
   );
